@@ -1,0 +1,22 @@
+name: No Response
+
+on:
+  issue_comment:
+    types: [created]
+
+  schedule:
+    # Schedule for five minutes after the hour, every hour
+    - cron: '5 * * * *'
+
+jobs:
+  noResponse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: lee-dohm/no-response@v0.5.0
+        env:
+          INPUT_DAYSUNTILCLOSE: 4
+          INPUT_RESPONSEREQUIREDLABEL: info-needed
+
+        with:
+          token: ${{ github.token }}
