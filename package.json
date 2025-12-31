@@ -1,0 +1,20 @@
+{
+  "name": "cordova",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test branch to demo the Cordova Style Guides",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:objc": "node hooks/lint-objc.mjs",
+    "lint:objc:fix": "node hooks/lint-objc.mjs --fix",
+    "lint:java": "./project-java/gradlew -p project-java spotlessCheck",
+    "lint:java:fix": "./project-java/gradlew -p project-java spotlessApply"
+  },
+  "keywords": [],
+  "author": "Apache Software Foundation",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cordova/eslint-config": "^6.0.0"
+  }
+}
